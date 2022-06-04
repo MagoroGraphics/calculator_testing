@@ -37,7 +37,7 @@ function KeyPad(props) {
           <button data-testid="number2" id="number2" onClick={() => numberClick('2')}>2</button>
           <button data-testid="number3" id="number3" onClick={() => numberClick('3')}>3</button>
           <button data-testid="operator-subtract" id="operator-subtract" onClick={() => operatorClick('-')}>-</button>
-          <button id="decimal" onClick={() => decimalClick()}>.</button>
+          <button data-testid="decimal" id="decimal" onClick={() => decimalClick()}>.</button>
           <button data-testid="number0" id="number0" onClick={() => numberClick('0')}>0</button>
           <button data-testid="operator-equals" id="operator-equals" onClick={() => operatorClick('=')}>=</button>
           <button data-testid="operator_add" id="operator_add" onClick={() => operatorClick('+')}>+</button>

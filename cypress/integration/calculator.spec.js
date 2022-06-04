@@ -8,12 +8,17 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '2')
   })
   
-  it('should update the display with the result of the operation with arithmetical operations', () => {
+  it('should update the display with the result of the operation with all arithmetical operations', () => {
     cy.get('#number5').click();
     cy.get('#operator_add').click();
     cy.get('#number3').click();
     cy.get('#operator-subtract').click();
-    cy.get('.display').should('contain', '8')
+    cy.get('#number1').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number4').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number2').click();
+    cy.get('.display').should('contain', '2')
   })
   
   it('should chain multiple operations together', () => {
@@ -22,8 +27,12 @@ describe("Calculator", () => {
     cy.get('#number3').click();
     cy.get('#operator_add').click();
     cy.get('#number4').click();
+    cy.get('#operator-subtract').click();
+    cy.get('#number8').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number2').click();
     cy.get('#operator-equals').click();
-    cy.get('.display').should('contain', '28')
+    cy.get('.display').should('contain', '10')
   })
   
   it('should have an expected outcome for a range of numbers', () => {
@@ -35,8 +44,20 @@ describe("Calculator", () => {
     cy.get('#number0').click();
     cy.get('#operator_add').click();
     cy.get('#number3').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number8').click();
+    cy.get('#number0').click();
+    cy.get('#number0').click();
+    cy.get('#number0').click();
+    cy.get('#number0').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number3').click();
+    cy.get('#operator_add').click();
+    cy.get('#number9').click();
+    cy.get('#decimal').click();
+    cy.get('#number7').click();
     cy.get('#operator-equals').click();
-    cy.get('.display').should('contain', '-4.5')
+    cy.get('.display').should('contain', '-119990.3')
   })
   
   it('should display 0 when dividing by 0', () => {
