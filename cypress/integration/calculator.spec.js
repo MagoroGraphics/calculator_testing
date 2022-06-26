@@ -13,7 +13,8 @@ describe("Calculator", () => {
     cy.get('#number9').click();
     cy.get('#operator_add').click();
     cy.get('#number4').click();
-    cy.get('.display').should('contain', '4')
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '13')
   })
 
    //Substraction
@@ -21,7 +22,8 @@ describe("Calculator", () => {
     cy.get('#number8').click();
     cy.get('#operator-subtract').click();
     cy.get('#number3').click();
-    cy.get('.display').should('contain', '3')
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '5')
   })
 
    //Multiplication
@@ -29,7 +31,8 @@ describe("Calculator", () => {
     cy.get('#number2').click();
     cy.get('#operator-multiply').click();
     cy.get('#number4').click();
-    cy.get('.display').should('contain', '4')
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '8')
   })
 
    //Division
@@ -37,7 +40,8 @@ describe("Calculator", () => {
     cy.get('#number6').click();
     cy.get('#operator-divide').click();
     cy.get('#number3').click();
-    cy.get('.display').should('contain', '3')
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '2')
   })
   
   it('should chain multiple operations together', () => {
